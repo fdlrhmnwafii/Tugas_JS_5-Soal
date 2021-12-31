@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Picker</title>
+    <script>
+        function ubah(){
+            let hewan = document.getElementById("gambar").value;
+            if (hewan == "Kucing"){
+                alert("Ini Gambar Kucing")
+                document.getElementById("isi").src = "kucing.jpg"
+                document.getElementById("isi").alt ="#"
+            }else if (hewan == "Anjing"){
+                alert("Ini Gambar Anjing")
+                document.getElementById("isi").src = "anjing.jpg"
+                document.getElementById("isi").alt ="#"
+            }else if (hewan == "Hamster"){
+                alert("Ini Gambar Hamster")
+                document.getElementById("isi").src = "hamster.jpg"
+                document.getElementById("isi").alt ="#"
+            }else if (hewan == "Burung"){
+                alert("Ini Gambar Burung")
+                document.getElementById("isi").src = "buwung.jpg"
+                document.getElementById("isi").alt ="#"
+            }else if (hewan == "Ikan"){
+                alert("Ini Gambar Ikan")
+                document.getElementById("isi").src = "ikan.jpg"
+                document.getElementById("isi").alt ="#"
+            }
+            console.log(hewan)
+        }
+    </script>
+    <style>
+        img{
+            width: 500px;
+        }
+        option:first {
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <select name="#" id="gambar" onchange="ubah()">
+        <option value="">Silahkan Pilih Gambar</option>
+        <option value="Kucing">Kucing</option>
+        <option value="Anjing">Anjing</option>
+        <option value="Hamster">Hamster</option>
+        <option value="Burung">Burung</option>
+        <option value="Ikan">Ikan</option>
+    </select>
+    <br><br>
+    <img src="" alt="" id="isi">
+</html>

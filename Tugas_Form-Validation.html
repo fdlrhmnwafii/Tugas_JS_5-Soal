@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        *{
+            font-family: cursive;
+        }
+
+        .warning{
+            color: red;
+            visibility: hidden;
+        }
+
+    </style>
+</head>
+<body>
+    <p>Nama Pelanggan :</p>
+    <input type="text" id="nama"><span class="warning"> *Nama Tidak Boleh Kosong</span>
+    <p>Email :</p>
+    <input type="email" name="#" id="email"><span class="warning"> *Email Tidak Boleh Kosong</span>
+    <p>Jam Keberangkatan :</p>
+    <input type="time" name="#" id="waktu"><span class="warning">*Jam Keberangkatan Tidak Boleh Kosong</span>
+    <p>Tujuan keberangkatan</p>
+    <input type="text" name="#" id="tujuan"><span class="warning"> *Tujuan keberangkatan Tidak Boleh Kosong</span>
+    <p>Jumlah Tiket :</p>
+    <input type="number" name="#" id="jumlah" min="1" max="5"><span class="warning"> *Jumlah Tiket Minimal 1 Tiket dan Maksimal 5 Tiket</span>
+    <br><br>
+    <button onclick="submit()">Submit</button>
+    <br><br>
+    <span id="pesan"></span>
+
+    <script>
+        let name = document.getElementById("nama");
+        let mail = document.getElementById("email");
+        let time = document.getElementById("waktu");
+        let tjn = document.getElementById("tujuan");
+        let jml = document.getElementById("jumlah");
+        let span = document.getElementsByClassName("warning");
+        function submit(){
+            
+            if (name.value == ""){
+                span[0].style.visibility = "visible"
+            } else {
+                span[0].style.visibility = "hidden"
+            }
+            if (mail.value == "" ){
+                span[1].style.visibility = "visible"
+            }else {
+                span[1].style.visibility = "hidden"
+            }
+            if (time.value == "" ){
+                span[2].style.visibility = "visible"
+            }else{ 
+                span[2].style.visibility = "hidden"
+            }
+            if (tjn.value == "" ){
+                span[3].style.visibility = "visible"
+            } else {
+                span[3].style.visibility = "hidden"
+            }
+            if (jml.value == "" ){
+                span[4].style.visibility = "visible"
+            }else {
+                span[4].style.visibility = "hidden"
+            }
+            if (name.value == "" || mail.value =="" || time.value =="" || tjn.value =="" || jml.value =="" ){
+                document.getElementById("pesan").innerHTML = "<h1>Harap Mengisi Data dengan Lengkap</h1>"                 
+            }else{
+                document.getElementById("pesan").innerHTML = "<h1>Data Berhasil di input</h1>"+"<br>Nama : "+ name.value + "<br>Email : "+mail.value + "<br>Jam Keberangtan : " + time.value + "<br>Tujuan Keberangkatan : " + tjn.value + "<br>Jumlah Tiket : " +jml.value; 
+            }
+            
+
+        }
+    </script>
+</body>
+</html>

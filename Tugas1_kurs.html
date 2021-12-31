@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konversi Mata Uang</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            text-align: center;
+        }
+        body,input,option,select{
+            font-family: cursive;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Kurs Rupiah - Mata Uang Asing</legend>
+        <table>
+            <thead>
+                <th>Masukan Nilai</th>
+                <th>Valas</th>
+                <th>Nilai Rupiah</th>
+            </thead>
+            <tbody>
+                <td><input type="number" value="" id="bil1" onchange="hitung()"></td>
+                <td>
+                    <select name="#" id="pil" onchange="hitung()">
+                        <option value="Dollar US">Dollar US</option>
+                        <option value="Dollar Singapore">Dollar Singapore</option>
+                        <option value="Ringgit Malaysia">Ringgit Malaysia</option>
+                        <option value="Yen Jepang">Yen Jepang</option>
+                        <option value="Euro">Euro</option>
+                        <option value="Riyal Arab Saudi">Riyal Arab Saudi</option>
+                    </select>
+                </td>
+                <td><input type="number" id="bil2"></td>
+            </tbody>
+        </table>
+    </fieldset>
+
+    <script>
+        function hitung(){
+            let us = 9915;
+            let singa = 13472;
+            let malay = 874;
+            let jepang = 120;
+            let euro = 15888;
+            let arab = 3592;
+            let uang = document.getElementById("bil1").value;
+            let tipe = document.getElementById("pil").value;
+            if (tipe == "Dollar US"){
+                hasil = uang*us;
+            }else if (tipe == "Dollar Singapore"){
+                hasil = uang*singa;
+            }else if (tipe == "Ringgit Malaysia"){
+                hasil = uang*malay;
+            }else if (tipe == "Yen Jepang"){
+                hasil = uang*jepang;
+            }else if (tipe == "Euro"){
+                hasil = uang*euro;
+            }else if (tipe == "Riyal Arab Saudi"){
+                hasil = uang*arab;
+            }
+            total = document.getElementById("bil2").value=hasil;
+        }
+
+    </script>
+
+</body>
+</html>
